@@ -12,6 +12,15 @@ module.exports = {
     filename: "[name].js", // [name]은 enrty에 추가한 main이 들어옴
     path: path.resolve("./dist"), // 절대경로를 구하기 위해 사용
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    publicPath: "/",
+    host: "localhost",
+    overlay: true,
+    port: 3000,
+    stats: "errors-only",
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
